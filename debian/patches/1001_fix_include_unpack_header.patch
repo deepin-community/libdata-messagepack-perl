@@ -1,0 +1,18 @@
+Description: Include msgpack/unpack.h for msgpack_unpack_return enum
+ In msgpack-c 2.1.0, unpack_template.h refers to some of the 
+ msgpack_unpack_return enum values, which causes msgpack-perl to fail to
+ build.  Including unpack.h resolve this failure.
+Author: James McCoy <jamessan@jamessan.com>
+Last-Update: 2017-09-18
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/xs-src/unpack.c
++++ b/xs-src/unpack.c
+@@ -17,6 +17,7 @@
+ } unpack_user;
+ #define UNPACK_USER_INIT { false, false, NULL }
+ 
++#include "msgpack/unpack.h"
+ #include "msgpack/unpack_define.h"
+ 
+ #define msgpack_unpack_struct(name) \

@@ -1,0 +1,31 @@
+Source: libdata-messagepack-perl
+Priority: optional
+Section: perl
+Build-Depends: debhelper-compat (=13),
+ dh-buildinfo,
+ perl,
+ libmodule-build-perl,
+ libmsgpack-dev (>= 3.1.0),
+ libfile-copy-recursive-perl,
+ libtest-requires-perl,
+ libtest-leaktrace-perl,
+ libmodule-build-xsutil-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Jonas Smedegaard <dr@jones.dk>, Christopher Hoskin <mans0954@debian.org>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libdata-messagepack-perl.git
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libdata-messagepack-perl
+Homepage: https://metacpan.org/module/Data::MessagePack
+Testsuite: autopkgtest-pkg-perl
+Rules-Requires-Root: no
+
+Package: libdata-messagepack-perl
+Architecture: any
+Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends}, ${cdbs:Depends}
+Description: MessagePack serializing/deserializing
+ Data::Messagepack converts Perl data structures to MessagePack and vice
+ versa.
+ .
+ MessagePack is a binary-based efficient object serialization
+ format. It enables to exchange structured objects between many
+ languages like JSON. But unlike JSON, it is very fast and small.

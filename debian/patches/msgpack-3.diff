@@ -1,0 +1,10 @@
+--- a/xs-src/pack.c
++++ b/xs-src/pack.c
+@@ -4,6 +4,7 @@
+  */
+ #include "xshelper.h"
+ 
++#include "msgpack/timestamp.h"
+ #include "msgpack/pack_define.h"
+ 
+ #define msgpack_pack_inline_func(name) \
